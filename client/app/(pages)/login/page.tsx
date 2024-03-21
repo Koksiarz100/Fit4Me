@@ -10,7 +10,14 @@ function loginForm() {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    console.log(login , password)
+
+    if (login === 'admin' || password === 'admin'){
+      sessionStorage.setItem('token', JSON.stringify('token'))
+      console.log('Logged in!')
+    }
+    else {
+      console.log('Wrong credentials!')
+    }
   }
 
   return (
